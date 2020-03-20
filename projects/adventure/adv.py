@@ -46,10 +46,13 @@ def dft_recursive(starting_room):
             if next_room.id not in visited:
                 next_room_path = dft_recursive_helper(next_room, visited)
                 if next_room_path:
-                    print("next_room_path: ", next_room_path)
+                    # print("next_room_path: ", next_room_path)
                     new_path = [direction, *next_room_path, opposite_directions[direction]]
+                    # print("new_path in IF: ", new_path)
                 else:
                     new_path = [direction, opposite_directions[direction]]
+                    # print("new_path in else: ", new_path)
+
                 path = [*path, *new_path]
         return path
 
